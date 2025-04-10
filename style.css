@@ -128,6 +128,10 @@ section {
     transition: var(--btn-transition);
     overflow: hidden;
     box-shadow: var(--btn-shadow);
+        display: inline-flex; /* changed from flex to inline-flex for inline alignment */
+        text-decoration: none; /* removes underline for links */
+      
+      
   }
   
   .ui-btn span {
@@ -502,4 +506,5 @@ footer {
         padding: 0 10px;
     }
 }
+
 
