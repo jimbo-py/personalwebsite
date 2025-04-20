@@ -484,7 +484,71 @@ section {
     margin-bottom: 10px;
 }
 
+.eye-white {
+  width:  100px; /* Adjust size as needed */
+  height: 100px; /* Half the width for the almond shape */
+  /* Create the almond shape using border-radius */
+  border-radius: 80% 0;
+  rotate: 45deg; 
+  aspect-ratio: 1;
+  /* Rotate slightly if needed, but let's keep it simple first */
+  /* transform: rotate(-5deg); */
+  position: relative; /* Needed for absolute positioning of iris */
+  overflow: hidden; /* Keep iris inside */
+  border: 3px solid #1a202c; /* Tailwind gray-900 for border */
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  
+  
+}
 
+.eye-container {
+  height: 1vh;               /* Full viewport height */
+  display: flex;
+  justify-content: center;     /* Horizontal center */
+  align-items: center;         /* Vertical center */
+  background-color: #f7fafc;   /* Optional: light background */
+}
+
+
+
+/* Iris styling */
+.iris {
+  width: 60px; /* Size of the iris */
+  height: 60px;
+  background-color: #f10707; /* Tailwind gray-500 */
+  border-radius: 50%; /* Make it circular */
+  position: absolute; /* Position relative to eye-white */
+  /* Centered initially */
+  top: 50%;
+  left: 50%;
+  /* We will use transform for movement */
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s linear; /* Smooth transition */
+  display: flex; /* Center pupil */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pupil styling */
+.pupil {
+  width: 30px; /* Size of the pupil */
+  height: 30px;
+  background-color: #050505; /* Tailwind gray-900 (black) */
+  border-radius: 50%;
+  position: relative; /* For highlight positioning */
+}
+
+/* Highlight styling */
+.highlight {
+  width: 8px; /* Size of the highlight */
+  height: 8px;
+  background-color: #ffffff; /* White */
+  border-radius: 50%;
+  position: absolute;
+  top: 5px; /* Position within the pupil */
+  left: 5px;
+}
 /* Footer */
 footer {
     text-align: center;
