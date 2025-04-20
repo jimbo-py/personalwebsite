@@ -110,7 +110,66 @@
                     Analyzed company financials to identify key web app parameters inputs; app-recommended stocks showed a 3-month 30% ROI. Gained experince with the use of yfinance and math operations in Python. </p>
             </article>
         </section>
+       <section id = "eyeball">
+        <div class = "eye-container">
+            <div class="eye-white" id="eye-white">
+                
+                  
+                <div class="iris" id="iris">
+                    <div class="pupil">
+                        <div class="highlight"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
        
+            <script>
+                // Get references to the eye elements
+                const iris = document.getElementById('iris');
+                const eyeWhite = document.getElementById('eye-white');
+        
+                // Add mouse move event listener to the whole document
+                document.addEventListener('mousemove', (event) => {
+                    // Get the bounding box of the eye-white element
+                    const eyeRect = eyeWhite.getBoundingClientRect();
+        
+                    // Calculate the center coordinates of the eye-white
+                    const eyeCenterX = eyeRect.left + eyeRect.width / 2;
+                    const eyeCenterY = eyeRect.top + eyeRect.height / 2;
+        
+                    // Get the mouse coordinates
+                    const mouseX = event.clientX;
+                    const mouseY = event.clientY;
+        
+                    // Calculate the angle between the eye center and the mouse position
+                    // atan2 gives the angle in radians from the positive x-axis
+                    const angle = Math.atan2(mouseY - eyeCenterY, mouseX - eyeCenterX);
+        
+                    // Calculate the maximum distance the iris can move from the center
+                    // This ensures the iris stays within the eye-white bounds
+                    // Max horizontal distance: (eye width / 2) - (iris width / 2)
+                    // Max vertical distance: (eye height / 2) - (iris height / 2)
+                    // We use the smaller dimension (height for almond shape) to calculate a circular movement radius
+                    const maxDistance = (eyeRect.height / 2) - (iris.offsetWidth / 2) - 5; // Added a small buffer (5px)
+        
+                    // Calculate the distance the iris should move along the angle
+                    // Use cosine for x and sine for y
+                    const moveX = Math.cos(angle) * maxDistance;
+                    const moveY = Math.sin(angle) * maxDistance;
+        
+                    // Apply the transform to move the iris
+                    // We add translate(-50%, -50%) to keep it centered before applying the movement
+                    iris.style.transform = `translate(-50%, -50%) translate(${moveX}px, ${moveY}px)`;
+                });
+        
+                // Optional: Reset eye position when mouse leaves the window
+                document.addEventListener('mouseleave', () => {
+                     iris.style.transform = 'translate(-50%, -50%) translate(0px, 0px)';
+                });
+            </script>
+        
+
+        </section>
         <section id="accolades">
             <h2>Accolades & Achievements</h2>
             
