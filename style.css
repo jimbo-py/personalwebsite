@@ -549,6 +549,7 @@ section {
   top: 5px; /* Position within the pupil */
   left: 5px;
 }
+
 /* Footer */
 footer {
     text-align: center;
@@ -570,5 +571,4 @@ footer {
         padding: 0 10px;
     }
 }
-
 
